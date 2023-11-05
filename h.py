@@ -1,49 +1,16 @@
-name = input("What is your name?\n")
+# Sample lists of lists
+lists = [[1, 2, 3], [4, 5, 6], [10, 11, 12], [7, 8, 9]]
 
-print("\nGood to have you", name, ",Welcome to Kaun Banega Crorepati !\n")
+# Initialize variables to store the maximum sum and the corresponding list
+max_sum = 0
+max_list = 0
 
-print(
-    "Here is your first question \n",
-)
+# Iterate through the lists
+for sub_list in lists:
+    current_sum = sum(sub_list)  # Calculate the sum of elements in the current list
+    if current_sum > max_sum:
+        max_sum = current_sum
+        max_list = sub_list
 
-questions = [
-    "What is capital of India? ",
-    "Who won FIFA 2022? ",
-    "How many planets in Solar system? ",
-    "What is value of g?",
-]
-
-answers = ["delhi", "argentina", "8", "9.8"]
-
-a = 1000
-b = 2000
-c = 3000
-d = 4000
-
-answers1 = input(questions[0])
-if answers1.lower() == answers[0]:
-    print("Correct answer. You have won", a, "INR\n")
-
-    answer2 = input(questions[1])   
-    if answer2.lower() == answers[1]:
-        print("Correct answer. You have won", b, "INR\n")
-
-        answer3 = input(questions[2])
-        if answer3.lower() == answers[2]:
-            print("Correct answer. You have won", c, "INR\n")
-
-            answer4 = input(questions[3])
-            if answer4.lower() == answers[3]:
-                print("Correct answer. You have won", d, "INR\n")
-            else:
-                print("Wrong answer.Your take home amount is", c, "INR\n")
-        else:
-            print("Wrong answer.Your take home amount is", b, "INR\n")
-
-    else:
-        print("Wrong answer.Your take home amount is", a, "INR\n")
-
-else:
-    print("Galat Jawab, Tumse na ho payega", 0, "INR\n")
-
-print("It was great playing with you", name,"you take home amount is",d)
+# Print the list with the highest sum
+print("List with the highest sum:", max_list)
